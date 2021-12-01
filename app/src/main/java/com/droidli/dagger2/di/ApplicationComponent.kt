@@ -5,6 +5,7 @@ import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 
+@ApplicationScope
 @Component(modules = [DataModule::class, DomainModule::class])
 interface ApplicationComponent {
 

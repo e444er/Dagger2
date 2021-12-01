@@ -3,6 +3,7 @@ package com.droidli.dagger2.data.network
 import android.content.Context
 import android.util.Log
 import com.droidli.dagger2.R
+import com.droidli.dagger2.di.ApplicationScope
 import javax.inject.Inject
 
 class ExampleApiService @Inject constructor(

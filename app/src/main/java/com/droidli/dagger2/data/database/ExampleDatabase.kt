@@ -3,6 +3,7 @@ package com.droidli.dagger2.data.database
 import android.content.Context
 import android.util.Log
 import com.droidli.dagger2.R
+import com.droidli.dagger2.di.ApplicationScope
 import javax.inject.Inject
 
 class ExampleDatabase @Inject constructor(
