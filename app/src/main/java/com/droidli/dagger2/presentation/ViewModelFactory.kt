@@ -2,15 +2,17 @@ package com.droidli.dagger2.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.droidli.dagger2.di.ApplicationScope
 import javax.inject.Inject
 import javax.inject.Provider
 
+@ApplicationScope
 class ViewModelFactory @Inject constructor(
-    private val viewModelsProvides: @JvmSuppressWildcards Map<String, Provider<ViewModel>>
-): ViewModelProvider.Factory{
+    private val viewModelsProvides: @JvmSuppressWildcards Map<Class<out ViewModel>, Provider<ViewModel>>
+) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return viewModelsProvides[modelClass.simpleName]?.get() as T
+        return viewModelsProvides[modelClass]?.get() as T
     }
 
 }
