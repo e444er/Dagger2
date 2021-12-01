@@ -6,7 +6,7 @@ import com.droidli.dagger2.di.ApplicationScope
 import javax.inject.Inject
 import javax.inject.Provider
 
-@ApplicationScope
+//@ApplicationScope
 class ViewModelFactory @Inject constructor(
     private val viewModelsProvides: @JvmSuppressWildcards Map<Class<out ViewModel>, Provider<ViewModel>>
 ) : ViewModelProvider.Factory {

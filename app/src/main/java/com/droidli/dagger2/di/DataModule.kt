@@ -1,9 +1,6 @@
 package com.droidli.dagger2.di
 
-import com.droidli.dagger2.data.datasource.ExampleLocalDataSource
-import com.droidli.dagger2.data.datasource.ExampleLocalDataSourceImpl
-import com.droidli.dagger2.data.datasource.ExampleRemoteDataSource
-import com.droidli.dagger2.data.datasource.ExampleRemoteDataSourceImpl
+import com.droidli.dagger2.data.datasource.*
 import dagger.Binds
 import dagger.Module
 
@@ -14,8 +11,14 @@ interface DataModule {
     @Binds
     fun bindsLocalDataSource(impl: ExampleLocalDataSourceImpl): ExampleLocalDataSource
 
+    @ProdQualifier
     @ApplicationScope
     @Binds
     fun bindsRemoteDataSource(impl: ExampleRemoteDataSourceImpl): ExampleRemoteDataSource
+
+    @TestQualifier
+    @ApplicationScope
+    @Binds
+    fun bindsTestDataSource(impl: TestRemoteDataSourceImpl): ExampleRemoteDataSource
 
 }
