@@ -12,7 +12,7 @@ class ExampleApplication: Application() {
 
 //    override fun onCreate() {
 //        super.onCreate()
-//        val component = DaggerApplicationComponent
+//        DaggerApplicationComponent
 //            .factory().create(this, System.currentTimeMillis())
 //    }
 
